@@ -49,7 +49,10 @@ export function translate2d(dx, dy) {
    *  transformed coordinate pair in the form [x, y]
    */
   export function composeTransform(f, g) {
-    throw new Error('Implement the composeTransform function');
+    return function result(x, y){
+      let composedTransform = g(f(x, y)[0], f(x, y)[1]);
+      return composedTransform;
+    }; 
   }
   
   /**
