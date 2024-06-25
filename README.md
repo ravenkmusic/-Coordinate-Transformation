@@ -1,0 +1,1 @@
+Your design company has primarily been working with CSS transformations to build web pages. After some discussion, a decision is made to start using JavaScript to perform some calculations dynamically. Some of your teammates are less experienced with JavaScript, so you decide to use a function closure to create reusable transformation for {x, y} coordinate pairs.
