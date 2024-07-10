@@ -65,5 +65,15 @@ export function translate2d(dx, dy) {
    *  if the arguments are the same on subsequent calls, or compute a new result if they are different.
    */
   export function memoizeTransform(f) {
-    throw new Error('Implement the memoizeTransform function');
-  }  
+    let prevX;
+    let prevY;
+    let prevResult;
+    return function memoizedCoordinates(x, y){
+      if (prevX === x && prevY === y){
+        return prevResult;
+      }
+      prevX = x;
+      prevY = y;
+      return prevResult = f(x, y);
+    }
+  }
